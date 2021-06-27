@@ -1,7 +1,5 @@
 # handsumm
-
-A new Flutter project.
-
+HandSumm is an application that lets you enter the URL of the image and gives a quick summary of the content. 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
