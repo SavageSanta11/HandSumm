@@ -87,6 +87,13 @@ List newk = [];
 String summaryt = "";
 String imgurl = "";
 bool newsum = false;
+
+const Color color = Color(0xff495867);
+const Color buttoncolor = Color(0xff79B473);
+
+late Future<String> textstuff;
+String initvalue = "";
+
 Future<String> getText() async {
   var url = Uri.parse('https://api.ocr.space/parse/image');
   var response = await http.post(url, headers: {
@@ -161,9 +168,6 @@ void main() {
   );
 }
 
-const Color color = Color(0xff495867);
-const Color buttoncolor = Color(0xff79B473);
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -172,7 +176,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final alucard = Hero(
+    final icon = Hero(
       tag: 'hero',
       child: Padding(
         padding: EdgeInsets.all(16.0),
@@ -208,8 +212,6 @@ class _HomePageState extends State<HomePage> {
       ]),
     );
 
-    final lorem = Padding(padding: EdgeInsets.all(8.0), child: SizedBox());
-
     final body = Container(
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.all(28.0),
@@ -221,9 +223,8 @@ class _HomePageState extends State<HomePage> {
         child: Stack(children: <Widget>[
           Column(
             children: <Widget>[
-              alucard,
+              icon,
               welcome,
-              lorem,
             ],
           ),
         ]),
@@ -242,9 +243,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-late Future<String> textstuff;
-String initvalue = "";
 
 // ignore: camel_case_types
 class urlInput extends StatefulWidget {
@@ -302,12 +300,12 @@ class _urlInputState extends State<urlInput> {
                   ),
                   onChanged: (text) {
                     imgurl = text;
-                  
                   },
                 ),
               ),
               SizedBox(height: 20.0),
-              Row(mainAxisAlignment: MainAxisAlignment.center,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
                       child: Text('Summarize'),
@@ -315,9 +313,9 @@ class _urlInputState extends State<urlInput> {
                       onPressed: () {
                         getSumm();
                       }),
-                      SizedBox(
-                        width: 20.0,
-                      ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
                   ElevatedButton(
                       child: Text('Copy Summary'),
                       style: ElevatedButton.styleFrom(primary: buttoncolor),
