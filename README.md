@@ -1,15 +1,41 @@
+
 # HandSumm
-HandSumm is an application that lets you enter the URL of the image and gives a quick summary of the content. 
-Youtube link: https://youtu.be/H3fQKe8VqNU
+
+HandSumm is an application that lets you enter the URL of the image and gives a quick summary of the content.
+
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-A few resources to get you started if this is your first Flutter project:
+## How to Use 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+**Step 1:**
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Download or clone this repo by using the link below:
+
+```
+https://github.com/SavageSanta11/HandSumm.git
+```
+
+**Step 2:**
+
+Go to project root and execute the following command in console to get the required dependencies: 
+
+```
+flutter pub get 
+```
+
+**Step 3:**
+
+To run the project on your browser:
+```
+flutter run -d chrome
+```
+## Preview
+![Home](https://github.com/SavageSanta11/HandSumm/blob/master/assets/home.png?raw=true)
+
+![Enter URL](https://github.com/SavageSanta11/HandSumm/blob/master/assets/Enter%20URL.png?raw=true)
+
+## Built with
+* [Flutter](https://flutter.dev/docs) - The framework used
+* [OCRSpace API](https://ocr.space/ocrapi) - The OCR API used to parse images and getting the extracted text results returned in a JSON format.
